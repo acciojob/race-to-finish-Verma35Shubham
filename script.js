@@ -1,4 +1,13 @@
-window.promises = [];
+const textInput = document.getElementById('text');
+const delayInput = document.getElementById('delay');
+const outputDiv = document.getElementById('output');
+const btn = document.getElementById('btn');
 
-// Do not change the code above this
-// add your promises to the array `promises`
+btn.addEventListener('click', async () => {
+  const text = textInput.value;
+  const delay = delayInput.value;
+
+  await new Promise(resolve => setTimeout(resolve, delay));
+
+  outputDiv.innerText = text;
+});
